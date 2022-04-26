@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- 
+	form 태그를 사용해서 이름, 여행할 나라, 코로나 예방 접종유무(radio)를
+	입력받은 후 forwardEx.jsp로 전송하기
+ -->
+ <form action ="forwardEx.jsp" >
+ 이름 : <input type = "text" name = "name" size = "10"><br>
+ 나라 : <input type = "text" name = "country" size = "10"><br>
+ 접종 : <select name = "corona">
+ 	<option value = "1">1차
+ 	<option value = "2">2차
+ 	<option value = "3">3차
+ 	
+ </select><br>
+ 
+ <input type = "submit" value ="확인">  
+ </form>
+
+</body>
+</html>

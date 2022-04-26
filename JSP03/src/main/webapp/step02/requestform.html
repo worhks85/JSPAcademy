@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action = "request02.jsp" method="post">
+	
+		이름 : <input type="text" name ="name" size= "10"><br>
+		학번 : <input type="text" name ="ID" size= "10"><br>
+		연락처 : <input type="text" name ="tel" size= "15"><br>
+	
+		동아리 : 
+		 <input type = "checkbox" name = "circle" value = "band" > 밴드동아리
+		 <input type = "checkbox" name = "circle" value = "dance" > 댄스동아리
+		 <input type = "checkbox" name = "circle" value = "read" > 독서동아리
+		 <input type = "checkbox" name = "circle" value = "game" > 게임동아리
+		 <br>
+		 
+		  사는지역 : <select name = "area">
+	  	<option value ="seoul"> 서울 </option>
+	  	<option value ="daejeon"> 대전</option>
+	    <option value ="daegu"> 대구 </option>
+	    <option value ="busan"> 부산 </option>
+		  </select>
+		  
+		  <input type ="submit" value= "서버로전송">
+	</form>
+
+</body>
+</html>
