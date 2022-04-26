@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h2>테이블 태그 table</h2>
+	
+	<table border="1"><!-- 표를 만들어주는 태그  border = 표의 태두리-->
+	
+		<caption>프로필</caption>
+		<!-- catption : 표의 제목을 붙이는 태그 -->
+		
+		
+		<tr><!-- tr은 표의 행을 나타낸다. -->
+		<th>no.</th>
+		<th>name</th>
+		<th>email</th>
+		<th>tel</th>
+		</tr>
+		
+		<tr>
+			<td>1</td>
+			<td>홍길동</td>
+			<td>hong@naver.com</td>
+			<td>010-2901-5017</td>
+		</tr>
+		
+		<tr>
+			<td>2</td>
+			<td>성춘향</td>
+			<td colspan = "2">sung.naver.com, 010-1234-5678</td> 
+			<!-- 
+			colspan 속성의 col은 열을 뜻한다.
+			colspan 두개의 열을 합침 -->
+			
+		</tr>
+		<tr>
+			<td rowspan ="2">3</td>
+			<td>이순신</td>
+			<td>lee@gmail.com</td>
+			<td>010-1212-3434</td>
+		</tr>
+		<!-- 
+			rowspan의 row는 행을 뜻한다.
+			행을 합치고자 할 때 rowspan 속성을 사용한다
+		 -->
+		<tr>
+			<td>이몽룡</td>
+			<td>mong@gmail.com</td>
+			<td>1111111</td>
+		</tr>
+		<tr>
+			<td colspan= "4"> 하나로 합치기</td>
+		</tr>
+		
+		
+	
+	</table>
+</body>
+</html>

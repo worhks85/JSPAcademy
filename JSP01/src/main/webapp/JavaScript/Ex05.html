@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function formCheck(){
+		var id = document.joinForm.id.value;	
+		var pw = document.joinForm.pass.value;
+		var pwcheck = document.joinForm.checkpass.value;
+		var name = document.joinForm.name.value;
+		if (id == "" || id == null) {
+			alert("id는 필수 사항 입니다.");
+			document.joinForm.id.focus();
+			return;
+		}
+		if (pw == "" || pw == null) {
+			alert("pw는 필수 사항 입니다.");
+			document.joinForm.pass.focus();
+			return;
+		}
+		if (name == "" || name == null) {
+			alert("name는 필수 사항 입니다.");
+			document.joinForm.name.focus();
+			return;
+		}
+		if ( pw != pwcheck) {
+			alert("비밀번호가 일치하지 않습니다."); 
+			document.joinForm.checkpass.focus();	
+			return;
+		}
+		
+		document.joinForm.submit();
+		// 유효성 검사를 한후 자바 스크립트에서 서버로 데이터 전송하기
+		
+		
+	}
+</script>
+</head>
+<body>
+	<!-- 
+		회원가입 양식 만들기
+		아이디 비밀번호 비밀번호확인 이름 성별 번호
+		-->
+	<h2> 회원가입 </h2>
+	<form action="#" name = "joinForm">
+	
+	아이디 : <input type="text" name="id" size="10"><br>
+	비밀번호 : <input type="password" name="pass" size="15"><br>
+	비밀번호 확인 : <input type="password" name="checkpass" size="15"><br>
+	이름 : <input type="text" name = "name" size="10"><br>
+	성별 :<label><input type = "radio" name = "gender" value = "Male"> 남자</label>
+	 	 <label><input type = "radio" name = "gender" value = "Female"> 여자<br></label>
+	번호 : <input type="text" name="tel" size="15"><br>
+	
+	<input type = "button" onclick = "formCheck()" value="회원가입">
+	<input type = "reset" value="초기화">
+	
+	</form>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2> form 태그</h2>
+	<form action = "jspPage.jsp" name = "profile" method ="get">
+	<!-- 
+		action : 폼이 전송되는 서버 url
+		name = 폼의 이름, name 속성은 서버로 제출된 폼데이터를 참조하기 위해 사용되거나,
+				자바 스크립트에서 폼 요소를 참조하기위해 사용된다.
+		method = 전송방법 설정, get은 default, post 는 데이터를 공개하지않고 숨겨서 전송
+				
+	 -->
+	<fieldset><!-- 하나의 폼 안에서 여러 구역을 나누어 표시 할 때 -->
+		<legend>아이디와 비밀번호</legend><!-- fieldset태그로 묶은 그룹에 제목지정 -->
+		아이디 : <input type = "text" name="id" size = "10" ><br>
+		<!--  input 태그는 사용자로부터 입력을 받을 수 있는 입력 필드를 정의할 때 사용한다. -->
+		비밀번호 : <input type = "password" name="password" size="10"><br>
+		
+		<!--input 의 개요 
+			type : 입력 형식
+			name : 서버로 전송되는 데이터의 이름
+			 -->
+	</fieldset>
+	<label>이름 : <input type= "text" name = "name" size="10"></label><br>
+	<label>학과 : <input type = "text" name = "department" size ="10"></label><br>
+	 <br>
+	 추가내용 입력 <br>
+	 <textarea rows = "5" cols="20"></textarea>
+	 <!-- 
+	 textarea : form 태그에서 여러줄의 택스트를 입력할때 사용한다.
+	 rows 속성은 라인수, cols속성은 너비를 명시한다
+	  -->
+	  <br>
+	<input type = "submit" value="서버로 전송">
+	<input type = "reset" value="초기화">
+	
+	<!-- 
+		submit = 서버로 데이터를 전송하는 제출버튼.
+				주소는 form요소에 action 속성에 명시
+		value = 버튼에 표시할 내용
+		reset = 사용자가 입력한 내용을 초기화
+		
+				-->
+				
+	</form>
+
+</body>
+</html>
