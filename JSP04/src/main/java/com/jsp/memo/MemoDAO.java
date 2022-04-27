@@ -59,7 +59,7 @@ public class MemoDAO {
 	// ArrayList<MemoDTO> 객체 반환하는 메소드
 	public ArrayList<MemoDTO> getList(){
 		ArrayList<MemoDTO> list = new ArrayList<>();
-		String query = "SELECT * FROM memo";
+		String query = "SELECT * FROM memo order by memoID DESC";
 		
 		try {
 			Class.forName(driver);
@@ -77,15 +77,44 @@ public class MemoDAO {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			try {
+				if( rs != null ) { rs.close();}
+				if( pstmt != null ) { pstmt.close();}
+				if( conn != null ) { conn.close();}
+				
+			} catch (Exception e2) {		}
 		}
 		
 		return list;
 	}
 	// memoID를 매개변수로 받아 해당 행을 삭제하는 메소드
 	
-	public int delMemo() {
-		int res = 0;
-		return res;
+	public void delMemo(int id) {
+		String query = "DELETE FROM memo where memoID = ?";
+		try {
+			Class.forName(driver);
+			conn = DriverManager.getConnection(url,uid,upw);
+			pstmt =conn.prepareCall(query);
+			pstmt.setInt(1, id);
+			int res = pstmt.executeUpdate();
+			if (res == 1 ) {
+				System.out.println("삭제가 완료 되었습니다.");
+			}else {
+				System.out.println("삭제가 실패 했습니다.");
+			}
+			
+		
+		
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if( pstmt != null )  pstmt.close();
+				if( conn != null )  conn.close();
+			} catch (Exception e2) {}
+		}
+		
 	}
 	
 	
